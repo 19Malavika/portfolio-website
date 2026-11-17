@@ -37,6 +37,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Copy application source code
 COPY . .
 
+# Install PHP composer dependencies
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
 # Copy Vite production build assets from Stage 1
 COPY --from=frontend /app/public/build ./public/build
 
@@ -55,3 +58,4 @@ RUN tr -d '\r' < /usr/local/bin/docker-start.sh > /usr/local/bin/docker-start.sh
 EXPOSE 80
 
 CMD ["/usr/local/bin/docker-start.sh"]
+
