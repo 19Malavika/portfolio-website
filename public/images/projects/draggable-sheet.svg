@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="grad_draggable-sheet.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#3730a3"/>
+    </linearGradient>
+    <linearGradient id="glow_draggable-sheet.svg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.1"/>
+    </linearGradient>
+    <pattern id="grid_draggable-sheet.svg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad_draggable-sheet.svg)"/>
+  <rect width="100%" height="100%" fill="url(#grid_draggable-sheet.svg)"/>
+  
+  <!-- Subtle decorative circles -->
+  <circle cx="700" cy="80" r="180" fill="#818cf8" opacity="0.08"/>
+  <circle cx="100" cy="420" r="140" fill="#818cf8" opacity="0.05"/>
+  
+  <!-- Glass Card Preview -->
+  <rect x="80" y="80" width="640" height="340" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  
+  <!-- Tag -->
+  <rect x="120" y="125" width="220" height="32" rx="6" fill="#818cf8" fill-opacity="0.2" stroke="#818cf8" stroke-width="1"/>
+  <text x="135" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#818cf8" letter-spacing="1.5">FLUTTER GESTURES</text>
+  
+  <!-- Title -->
+  <text x="120" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#f8fafc">Draggable Scrollable Sheet</text>
+  
+  <!-- Desc -->
+  <text x="120" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">Multiple Snap Points • Nested Scroll • Backdrop Blur</text>
+  
+  <!-- Feature Pills -->
+  <rect x="120" y="295" width="180" height="38" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+  <circle cx="140" cy="314" r="5" fill="#818cf8"/>
+  <text x="155" y="320" font-family="monospace" font-size="12" fill="#cbd5e1">INTERACTIVE PHYSICS</text>
+  
+  <rect x="315" y="295" width="150" height="38" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+  <circle cx="335" cy="314" r="5" fill="#38bdf8"/>
+  <text x="350" y="320" font-family="monospace" font-size="12" fill="#cbd5e1">PRODUCTION READY</text>
+  
+  <!-- Bottom line glow -->
+  <line x1="80" y1="418" x2="720" y2="418" stroke="url(#glow_draggable-sheet.svg)" stroke-width="2"/>
+</svg>

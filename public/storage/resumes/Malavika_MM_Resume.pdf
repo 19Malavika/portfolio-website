@@ -1,0 +1,135 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Title (Resume - Malavika M M)
+  /Author (Malavika M M)
+  /Creator (Malavika Portfolio Generator)
+  /Producer (Laravel Vue Resume System)
+>>
+endobj
+2 0 obj
+<<
+  /Type /Catalog
+  /Pages 3 0 R
+>>
+endobj
+3 0 obj
+<<
+  /Type /Pages
+  /Kids [4 0 R]
+  /Count 1
+>>
+endobj
+4 0 obj
+<<
+  /Type /Page
+  /Parent 3 0 R
+  /MediaBox [0 0 612 792]
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+  /Contents 7 0 R
+>>
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+7 0 obj
+<< /Length 1200 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(MALAVIKA M M) Tj
+/F1 11 Tf
+0 -22 Td
+(FULL STACK DEVELOPER | FLUTTER | LARAVEL | PHP) Tj
+/F2 10 Tf
+0 -16 Td
+(Thrissur, Kerala, India | 7736192047 | malavikamm177@gmail.com) Tj
+0 -14 Td
+(GitHub: https://github.com/19Malavika | LinkedIn: https://linkedin.com/in/malavika-m-m-b722142a0/) Tj
+0 -24 Td
+/F1 13 Tf
+(PROFESSIONAL SUMMARY) Tj
+/F2 10 Tf
+0 -16 Td
+(Full Stack Developer specializing in Flutter for mobile frontend and Laravel/PHP for backend.) Tj
+0 -13 Td
+(Hands-on experience building responsive mobile and web applications with Riverpod, Clean Architecture,) Tj
+0 -13 Td
+(MVC architecture, REST APIs, authentication, authorization, and database integration.) Tj
+0 -24 Td
+/F1 13 Tf
+(TECHNICAL SKILLS) Tj
+/F2 10 Tf
+0 -16 Td
+(Languages: Dart, PHP, JavaScript, Python, HTML5, CSS3) Tj
+0 -14 Td
+(Frontend & Mobile: Flutter, Vue.js, React.js, Material 3, Bootstrap, Responsive UI/UX) Tj
+0 -14 Td
+(Backend: Laravel, PHP, REST APIs, MVC Architecture, Authentication, RBAC, Eloquent ORM) Tj
+0 -14 Td
+(Databases: MySQL, SQLite, Firebase, Firestore) Tj
+0 -14 Td
+(Tools: Git, GitHub, VS Code, Axios, TMDB API, Figma) Tj
+0 -24 Td
+/F1 13 Tf
+(EDUCATION) Tj
+/F2 10 Tf
+0 -16 Td
+(B.Tech in Computer Science and Engineering - Government Engineering College, Wayanad) Tj
+0 -13 Td
+(APJ Abdul Kalam Technological University (KTU), Kerala, India) Tj
+0 -24 Td
+/F1 13 Tf
+(FEATURED PROJECTS) Tj
+/F2 10 Tf
+0 -16 Td
+(- Smart Resource Booking & Allocation System (Laravel, PHP, Blade, Eloquent, MySQL)) Tj
+0 -14 Td
+(- Employee Leave Management System (Laravel, PHP, MySQL, Role-based Access)) Tj
+0 -14 Td
+(- Riverpod Flutter Shopping App (Flutter, Dart, Riverpod 3.x, Material 3, Clean Architecture)) Tj
+0 -14 Td
+(- FlexTenure - BNPL & EMI Financing Application (Flutter, Dart, Material 3 UI)) Tj
+0 -14 Td
+(- GoWayanad - Emergency Ride Booking Application (Flutter, Firebase, GPS Tracking)) Tj
+0 -14 Td
+(- Netflix Clone (React, JavaScript, Axios, TMDB API)) Tj
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000155 00000 n 
+0000000207 00000 n 
+0000000266 00000 n 
+0000000416 00000 n 
+0000000494 00000 n 
+0000000567 00000 n 
+trailer
+<<
+  /Size 8
+  /Root 2 0 R
+  /Info 1 0 R
+>>
+startxref
+1850
+%%EOF
