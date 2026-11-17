@@ -1,5 +1,16 @@
 <template>
   <div class="space-y-6">
+    <!-- Toast Notification -->
+    <div
+      v-if="toast.message"
+      :class="[
+        'px-4 py-3 rounded-xl text-xs font-mono border transition-all duration-300',
+        toast.type === 'success' ? 'bg-emerald-950/70 border-emerald-800 text-emerald-300' : 'bg-rose-950/70 border-rose-800 text-rose-300'
+      ]"
+    >
+      {{ toast.message }}
+    </div>
+
     <div class="flex items-center justify-between flex-wrap gap-4">
       <div>
         <h1 class="text-2xl font-extrabold text-white">Social & Web Links</h1>
@@ -144,6 +155,13 @@ const socialLinks = ref([]);
 const showModal = ref(false);
 const isEditing = ref(false);
 const currentId = ref(null);
+const toast = reactive({ type: '', message: '' });
+
+const showToast = (type, message) => {
+  toast.type = type;
+  toast.message = message;
+  setTimeout(() => toast.message = '', 4000);
+};
 
 const modalForm = reactive({
   platform: '',
@@ -187,13 +205,15 @@ const saveLink = async () => {
   try {
     if (isEditing.value) {
       await api.put(`/admin/social-links/${currentId.value}`, modalForm);
+      showToast('success', 'Social link updated successfully.');
     } else {
       await api.post('/admin/social-links', modalForm);
+      showToast('success', 'Social link added successfully.');
     }
     showModal.value = false;
     loadLinks();
   } catch (err) {
-    alert('Failed to save social link.');
+    showToast('error', 'Failed to save social link. Please check required fields.');
   }
 };
 
@@ -201,9 +221,10 @@ const deleteLink = async (id) => {
   if (!confirm('Remove this social link?')) return;
   try {
     await api.delete(`/admin/social-links/${id}`);
+    showToast('success', 'Social link deleted.');
     loadLinks();
   } catch (err) {
-    alert('Failed to delete link.');
+    showToast('error', 'Failed to delete link.');
   }
 };
 
@@ -211,3 +232,4 @@ onMounted(() => {
   loadLinks();
 });
 </script>
+

@@ -23,3 +23,4 @@ class Certification extends Model
         'display_order' => 'integer',
     ];
 }
+

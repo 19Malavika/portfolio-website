@@ -64,6 +64,8 @@ class AdminController extends Controller
             'phone' => 'nullable|string|max:30',
             'email' => 'required|email|max:100',
             'location' => 'nullable|string|max:150',
+            'avatar_url' => 'nullable|string|max:255',
+            'resume_path' => 'nullable|string|max:255',
             'strengths' => 'nullable|array',
             'interests' => 'nullable|array',
             'stats' => 'nullable|array',
@@ -222,9 +224,9 @@ class AdminController extends Controller
             'features' => 'nullable|array',
             'technologies' => 'nullable|array',
             'highlights' => 'nullable|array',
-            'image_url' => 'nullable|string',
-            'github_url' => 'nullable|url',
-            'live_url' => 'nullable|url',
+            'image_url' => 'nullable|string|max:255',
+            'github_url' => 'nullable|string|max:255',
+            'live_url' => 'nullable|string|max:255',
             'is_featured' => 'nullable|boolean',
             'display_order' => 'nullable|integer',
         ]);
@@ -627,3 +629,4 @@ class AdminController extends Controller
         ]);
     }
 }
+

@@ -88,3 +88,4 @@ Route::middleware('admin.auth')->prefix('admin')->group(function () {
     Route::patch('/messages/{id}/read', [AdminController::class, 'markMessageAsRead']);
     Route::delete('/messages/{id}', [AdminController::class, 'deleteMessage']);
 });
+

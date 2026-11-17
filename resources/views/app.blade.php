@@ -12,6 +12,7 @@
     <meta name="keywords" content="Malavika M M, Full Stack Developer, Flutter Developer, Laravel Developer, PHP, Dart, Vue.js, React, Clean Architecture, Riverpod, Kerala, India">
     <meta name="author" content="Malavika M M">
     <meta name="theme-color" content="#090d16">
+    <link rel="canonical" href="{{ url('/') }}">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
@@ -41,3 +42,4 @@
     <div id="app"></div>
 </body>
 </html>
+

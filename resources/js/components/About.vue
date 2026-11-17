@@ -174,3 +174,4 @@ const stats = computed(() => {
   return props.profile?.stats?.length ? props.profile.stats : defaultStats;
 });
 </script>
+

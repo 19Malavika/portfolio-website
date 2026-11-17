@@ -28,3 +28,4 @@ class Education extends Model
         'display_order' => 'integer',
     ];
 }
+

@@ -23,3 +23,4 @@ class SocialLink extends Model
         'display_order' => 'integer',
     ];
 }
+

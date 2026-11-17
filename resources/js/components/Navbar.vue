@@ -76,7 +76,7 @@
 
           <!-- Contact Me CTA -->
           <a
-            href="#contact"
+            href="/#contact"
             class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 shadow-md shadow-sky-500/25 transition-all hover:scale-105"
           >
             <span>Let's Talk</span>
@@ -150,7 +150,7 @@
               </a>
             </div>
             <a
-              href="#contact"
+              href="/#contact"
               @click="mobileMenuOpen = false"
               class="px-4 py-2 rounded-xl text-sm font-semibold bg-sky-500 text-white"
             >
@@ -170,13 +170,13 @@ const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Education', href: '#education' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/#home' },
+  { name: 'About', href: '/#about' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Experience', href: '/#experience' },
+  { name: 'Education', href: '/#education' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 const handleScroll = () => {
@@ -191,3 +191,4 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
 </script>
+

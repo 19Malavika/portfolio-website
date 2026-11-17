@@ -255,3 +255,4 @@ onMounted(() => {
   loadSkills();
 });
 </script>
+

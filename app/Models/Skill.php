@@ -25,3 +25,4 @@ class Skill extends Model
         'is_featured' => 'boolean',
     ];
 }
+

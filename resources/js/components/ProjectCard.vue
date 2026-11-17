@@ -141,3 +141,4 @@ const getCategoryBadgeClass = (category) => {
   return 'bg-slate-900/80 text-slate-300 border-slate-700/60';
 };
 </script>
+

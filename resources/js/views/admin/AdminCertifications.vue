@@ -1,5 +1,16 @@
 <template>
   <div class="space-y-6">
+    <!-- Toast Notification -->
+    <div
+      v-if="toast.message"
+      :class="[
+        'px-4 py-3 rounded-xl text-xs font-mono border transition-all duration-300',
+        toast.type === 'success' ? 'bg-emerald-950/70 border-emerald-800 text-emerald-300' : 'bg-rose-950/70 border-rose-800 text-rose-300'
+      ]"
+    >
+      {{ toast.message }}
+    </div>
+
     <div class="flex items-center justify-between flex-wrap gap-4">
       <div>
         <h1 class="text-2xl font-extrabold text-white">Certifications & Coursework</h1>
@@ -158,6 +169,13 @@ const certifications = ref([]);
 const showModal = ref(false);
 const isEditing = ref(false);
 const currentId = ref(null);
+const toast = reactive({ type: '', message: '' });
+
+const showToast = (type, message) => {
+  toast.type = type;
+  toast.message = message;
+  setTimeout(() => toast.message = '', 4000);
+};
 
 const modalForm = reactive({
   title: '',
@@ -207,13 +225,15 @@ const saveCert = async () => {
   try {
     if (isEditing.value) {
       await api.put(`/admin/certifications/${currentId.value}`, modalForm);
+      showToast('success', 'Certification updated successfully.');
     } else {
       await api.post('/admin/certifications', modalForm);
+      showToast('success', 'Certification added successfully.');
     }
     showModal.value = false;
     loadCerts();
   } catch (err) {
-    alert('Failed to save certification.');
+    showToast('error', 'Failed to save certification. Please check required fields.');
   }
 };
 
@@ -221,9 +241,10 @@ const deleteCert = async (id) => {
   if (!confirm('Delete this certification?')) return;
   try {
     await api.delete(`/admin/certifications/${id}`);
+    showToast('success', 'Certification deleted.');
     loadCerts();
   } catch (err) {
-    alert('Failed to delete certification.');
+    showToast('error', 'Failed to delete certification.');
   }
 };
 
@@ -231,3 +252,4 @@ onMounted(() => {
   loadCerts();
 });
 </script>
+

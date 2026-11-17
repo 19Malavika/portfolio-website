@@ -28,7 +28,7 @@ class PublicController extends Controller
             'data' => [
                 'profile' => Profile::first(),
                 'social_links' => SocialLink::where('is_active', true)->orderBy('display_order')->get(),
-                'skills' => Skill::where('is_featured', true)->orderBy('display_order')->get(),
+                'skills' => Skill::orderBy('display_order')->get(),
                 'skills_by_category' => Skill::orderBy('display_order')->get()->groupBy('category'),
                 'education' => Education::orderBy('display_order')->get(),
                 'experiences' => Experience::orderBy('display_order')->get(),
@@ -223,24 +223,27 @@ class PublicController extends Controller
         $profile = Profile::first();
 
         if ($profile && $profile->resume_path) {
-            $path = public_path($profile->resume_path);
-            if (file_exists($path)) {
-                return response()->download($path, 'Malavika_MM_Resume.pdf', [
+            $relativePath = ltrim(str_replace('/storage/', '', $profile->resume_path), '/\\');
+            
+            // 1. Check in public/storage/
+            $fullPath = public_path('storage/' . $relativePath);
+            if (file_exists($fullPath)) {
+                return response()->download($fullPath, 'Malavika_MM_Resume.pdf', [
                     'Content-Type' => 'application/pdf',
                 ]);
             }
 
-            // Check in storage
-            if (Storage::disk('public')->exists($profile->resume_path)) {
-                return Storage::disk('public')->download($profile->resume_path, 'Malavika_MM_Resume.pdf');
+            // 2. Direct check on public_path
+            $directPath = public_path(ltrim($profile->resume_path, '/\\'));
+            if (file_exists($directPath)) {
+                return response()->download($directPath, 'Malavika_MM_Resume.pdf', [
+                    'Content-Type' => 'application/pdf',
+                ]);
             }
         }
 
-        // Return a clean fallback PDF response or redirect to generated resume
-        return response()->json([
-            'status' => 'info',
-            'message' => 'Resume is available for direct view in the Resume section.',
-            'url' => '/#resume'
-        ]);
+        // Clean fallback redirect to the full interactive Resume page
+        return redirect('/resume');
     }
 }
+

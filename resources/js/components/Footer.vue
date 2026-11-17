@@ -26,12 +26,12 @@
             Navigation
           </div>
           <ul class="space-y-1.5">
-            <li><a href="#home" class="hover:text-sky-400 transition-colors">Home</a></li>
-            <li><a href="#about" class="hover:text-sky-400 transition-colors">About</a></li>
-            <li><a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a></li>
-            <li><a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a></li>
-            <li><a href="#education" class="hover:text-sky-400 transition-colors">Education</a></li>
-            <li><a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a></li>
+            <li><a href="/#home" class="hover:text-sky-400 transition-colors">Home</a></li>
+            <li><a href="/#about" class="hover:text-sky-400 transition-colors">About</a></li>
+            <li><a href="/#skills" class="hover:text-sky-400 transition-colors">Skills</a></li>
+            <li><a href="/#experience" class="hover:text-sky-400 transition-colors">Experience</a></li>
+            <li><a href="/#education" class="hover:text-sky-400 transition-colors">Education</a></li>
+            <li><a href="/#projects" class="hover:text-sky-400 transition-colors">Projects</a></li>
             <li><router-link to="/resume" class="text-sky-400 hover:underline">Full Resume</router-link></li>
           </ul>
         </div>
@@ -107,3 +107,4 @@
 
 <script setup>
 </script>
+

@@ -32,3 +32,4 @@ class Profile extends Model
         'stats' => 'array',
     ];
 }
+

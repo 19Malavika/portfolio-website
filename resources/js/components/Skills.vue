@@ -174,3 +174,4 @@ const getProgressGradient = (category) => {
   return 'bg-gradient-to-r from-sky-400 to-indigo-500';
 };
 </script>
+

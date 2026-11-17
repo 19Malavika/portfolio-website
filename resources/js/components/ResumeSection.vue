@@ -183,3 +183,4 @@ const resumeDownloadUrl = computed(() => {
   return props.profile?.resume_path || '/api/resume/download';
 });
 </script>
+

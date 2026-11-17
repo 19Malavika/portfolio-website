@@ -144,3 +144,4 @@ const openModal = (project) => {
   isModalOpen.value = true;
 };
 </script>
+

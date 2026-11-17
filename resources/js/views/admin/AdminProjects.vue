@@ -174,6 +174,7 @@
               <input
                 v-model="modalForm.github_url"
                 type="text"
+                placeholder="https://github.com/..."
                 class="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs focus:outline-none focus:border-sky-500"
               />
             </div>
@@ -183,8 +184,25 @@
               <input
                 v-model="modalForm.live_url"
                 type="text"
+                placeholder="https://..."
                 class="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs focus:outline-none focus:border-sky-500"
               />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-slate-300 mb-1">Cover Image / Screenshot</label>
+            <div class="flex items-center gap-3">
+              <input
+                v-model="modalForm.image_url"
+                type="text"
+                placeholder="/images/projects/smart-resource-booking.svg or URL"
+                class="flex-1 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs focus:outline-none focus:border-sky-500"
+              />
+              <label v-if="isEditing && currentId" class="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs cursor-pointer flex-shrink-0">
+                Upload Image
+                <input type="file" accept="image/*" class="hidden" @change="uploadImageFile" />
+              </label>
             </div>
           </div>
 
@@ -259,6 +277,7 @@ const modalForm = reactive({
   short_description: '',
   full_description: '',
   problem_statement: '',
+  image_url: '',
   github_url: '',
   live_url: '',
   is_featured: false,
@@ -291,6 +310,7 @@ const openCreateModal = () => {
   modalForm.short_description = '';
   modalForm.full_description = '';
   modalForm.problem_statement = '';
+  modalForm.image_url = '';
   modalForm.github_url = '';
   modalForm.live_url = '';
   modalForm.is_featured = false;
@@ -307,12 +327,34 @@ const openEditModal = (p) => {
   modalForm.short_description = p.short_description;
   modalForm.full_description = p.full_description;
   modalForm.problem_statement = p.problem_statement;
+  modalForm.image_url = p.image_url || '';
   modalForm.github_url = p.github_url;
   modalForm.live_url = p.live_url;
   modalForm.is_featured = !!p.is_featured;
   techInput.value = (p.technologies || []).join(', ');
   featuresInput.value = (p.features || []).join('\n');
   showModal.value = true;
+};
+
+const uploadImageFile = async (e) => {
+  const file = e.target.files && e.target.files[0];
+  if (!file || !currentId.value) return;
+
+  const formData = new FormData();
+  formData.append('image', file);
+
+  try {
+    const res = await api.post(`/admin/projects/${currentId.value}/image`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    });
+    if (res.data && res.data.image_url) {
+      modalForm.image_url = res.data.image_url;
+      showToast('success', 'Project image uploaded successfully.');
+      loadProjects();
+    }
+  } catch (err) {
+    showToast('error', 'Image upload failed. Please try a valid PNG, JPG, or SVG under 4MB.');
+  }
 };
 
 const saveProject = async () => {
@@ -352,3 +394,4 @@ onMounted(() => {
   loadProjects();
 });
 </script>
+

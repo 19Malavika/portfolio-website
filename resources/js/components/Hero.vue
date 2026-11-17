@@ -58,7 +58,7 @@
           <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <!-- View Projects -->
             <a
-              href="#projects"
+              href="/#projects"
               class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 shadow-lg shadow-sky-500/25 transition-all hover:scale-105 flex items-center justify-center gap-2"
             >
               <span>View My Projects</span>
@@ -187,3 +187,4 @@ const resumeDownloadUrl = computed(() => {
   return props.profile?.resume_path || '/api/resume/download';
 });
 </script>
+
